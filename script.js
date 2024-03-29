@@ -1,4 +1,4 @@
-const rhymes = {
+const rhymes = [
     {
         title: 'Ring Around the Rosie',
         lines: {
@@ -46,7 +46,7 @@ const rhymes = {
             4: "Three bags full",
             5: "One for the master",
             6: "And one for the dame",
-            7: "And none for the little boy"
+            7: "And none for the little boy",
             8: "Who lives in the lane."
         }
     }, 
@@ -83,11 +83,11 @@ const rhymes = {
         title: 'To Market! To Market!',
         lines: {
             1: "To market, to market, to buy a fat pig",
-            2: "Home again, home again, jiggety-jig".
+            2: "Home again, home again, jiggety-jig",
             3: "To market, to market, to buy a fat hog",
             4: "Home again, home again, jiggety-jog",
             5: "To market, to market to buy a plum cake",
-            6: "Home again, home again, market is late".
+            6: "Home again, home again, market is late",
             7: "To market, to market, to buy a plum bun",
             8: "Home again, home again, market is done."
         }
@@ -103,4 +103,18 @@ const rhymes = {
             6: "Little Tommy Stout"
         }
     }
+]
+
+
+function getLineCount(min, max) {
+    const minCeiled = Math.ceil(min);
+    const maxFloored = Math.floor(max);
+    return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
 }
+
+console.log(getLineCount(3, 9));
+
+
+
+// Rhyming: https://api-ninjas.com/api/rhyme
+// Meter: https://rednoise.org/rita/
