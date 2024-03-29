@@ -112,9 +112,31 @@ function getLineCount(min, max) {
     return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
 }
 
-console.log(getLineCount(3, 9));
 
+const rhymesLineCount = getLineCount(3, 9);
 
+const blessingGenerator = (arr) => {
+    let count = 1;
+    let newRhyme = [];
+    while (count <= rhymesLineCount) {
+        console.log(count);
+        const randomIndex = Math.floor(Math.random() * arr.length);
+        console.log(randomIndex);
+        console.log(arr[randomIndex].lines[count]);
+       if(arr[randomIndex].lines[count] === undefined) {
+            continue;
+        } else {
+            newRhyme.push(arr[randomIndex].lines[count]);
+            console.log(newRhyme);
+        } 
+        count++;
+    }
+    console.log(newRhyme);
+    return newRhyme.join(', ');
+
+}
+
+console.log(blessingGenerator(rhymes));
 
 // Rhyming: https://api-ninjas.com/api/rhyme
 // Meter: https://rednoise.org/rita/
