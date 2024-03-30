@@ -115,6 +115,16 @@ function getLineCount(min, max) {
 
 const rhymesLineCount = getLineCount(3, 9);
 
+const getTitleArray = (arr) => {
+    const titleArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        titleArray.push(arr[i].title);
+    }
+    return titleArray;
+}
+
+const titles = getTitleArray(rhymes);
+
 const blessingGenerator = (arr) => {
     let count = 1;
     let newRhyme = [];
@@ -131,8 +141,8 @@ const blessingGenerator = (arr) => {
         } 
         count++;
     }
-    console.log(newRhyme);
-    return newRhyme.join(', ');
+
+    return newRhyme;
 
 }
 
