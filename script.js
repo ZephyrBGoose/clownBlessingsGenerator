@@ -115,7 +115,6 @@ function getLineCount(min, max) {
 }
 
 
-const rhymesLineCount = getLineCount(3, 9);
 
 const getTitleArray = (arr) => {
     const titleArray = [];
@@ -130,6 +129,7 @@ const titles = getTitleArray(rhymes);
 const blessingGenerator = () => {
     let count = 1;
     let newRhyme = [];
+    const rhymesLineCount = getLineCount(3, 9);
     while (count <= rhymesLineCount) {
         const randomIndex = Math.floor(Math.random() * rhymes.length);
        if(rhymes[randomIndex].lines[count] === undefined) {
