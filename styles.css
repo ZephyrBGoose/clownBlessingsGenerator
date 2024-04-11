@@ -1,4 +1,25 @@
+body {
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+    margin: 2% 10%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
 div {
     height: 25rem;
     width: 100%;
+    background-color: white;
+    font-size: 2rem;
+    margin: 0 auto;
+}
+
+button {
+    height: 10%;
+    font-size: 2rem;
+    padding: 0.75rem;
 }
