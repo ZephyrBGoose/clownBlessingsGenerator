@@ -105,6 +105,8 @@ const rhymes = [
     }
 ]
 
+const generateButton = document.getElementById('generateButton');
+console.log(document.title);
 
 function getLineCount(min, max) {
     const minCeiled = Math.ceil(min);
@@ -125,28 +127,32 @@ const getTitleArray = (arr) => {
 
 const titles = getTitleArray(rhymes);
 
-const blessingGenerator = (arr) => {
+const blessingGenerator = () => {
     let count = 1;
     let newRhyme = [];
     while (count <= rhymesLineCount) {
-        console.log(count);
-        const randomIndex = Math.floor(Math.random() * arr.length);
-        console.log(randomIndex);
-        console.log(arr[randomIndex].lines[count]);
-       if(arr[randomIndex].lines[count] === undefined) {
+        const randomIndex = Math.floor(Math.random() * rhymes.length);
+       if(rhymes[randomIndex].lines[count] === undefined) {
             continue;
         } else {
-            newRhyme.push(arr[randomIndex].lines[count]);
+            newRhyme.push(rhymes[randomIndex].lines[count]);
             console.log(newRhyme);
         } 
         count++;
     }
-
+    document.getElementById('quote').innerHTML = newRhyme.join('<br>');
     return newRhyme;
 
 }
 
-console.log(blessingGenerator(rhymes));
+
+
+const riddleGenerator = blessingGenerator(rhymes);
+
+generateButton.addEventListener('click', blessingGenerator);
+
+console.log(blessingGenerator());
+
 
 // Rhyming: https://api-ninjas.com/api/rhyme
 // Meter: https://rednoise.org/rita/
